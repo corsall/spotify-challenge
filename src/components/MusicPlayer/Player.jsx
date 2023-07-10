@@ -11,7 +11,6 @@ function Player({activeSong, isPlaying, volume}) {
     } else {
       ref.current.pause();
     }
-    // console.log(ref.current);
   }
 
   useEffect(() => {

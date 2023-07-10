@@ -21,6 +21,7 @@ function MusicPlayer() {
 
   return (
     <div className='flex flex-row fixed bottom-0 left-0 right-0 w-full bg-[#212121] h-20 items-center'>
+
       {/* left-controls */}
       <div className='flex basis-1/4 ml-20'>
         {isPlaying ? (<BsFillPauseFill size={40} color='#FFF'className='cursor-pointer' onClick={handlePlayPause}/>) : 
@@ -28,8 +29,16 @@ function MusicPlayer() {
       </div>
 
       {/* center-controls */}
-      <div className='flex justify-center basis-1/2 text-white font-bold'>
-        LET ME BE
+      <div className='relative flex justify-center basis-1/2 text-white font-bold h-20'>
+        <img src={activeSong?.images?.coverart} alt="cover art" className='object- m-4 rounded-sm'/>
+        <div className='flex flex-col mt-4 ml-2'>
+          <p className=''>
+            {activeSong?.title}
+          </p>
+          <p className='text-[#FFFFFFB3]'>
+            {activeSong?.subtitle}
+          </p>
+        </div>
       </div>
 
       {/* right-controls */}

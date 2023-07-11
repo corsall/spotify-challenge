@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* custom youtube-like seekbar */
+  .seekbar {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .seekbar::-webkit-slider-runnable-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 2px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+
+  .seekbar:hover::-webkit-slider-runnable-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 4px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+
+  .seekbar::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+     appearance: none;
+  }
+
+  .seekbar:hover::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: -4px;
+    /*custom styles*/
+    border-radius: 100%;
+    background-color: rgb(255, 0, 0);
+    height: 12px;
+    width: 12px;
+  }
+}

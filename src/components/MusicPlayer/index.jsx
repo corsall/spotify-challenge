@@ -4,11 +4,17 @@ import VolumeBar from './VolumeBar';
 import Player from './Player';
 import { useDispatch, useSelector } from 'react-redux';
 import { playPause } from '../../redux/features/playerSlice';
+import Seekbar from './Seekbar';
 
 function MusicPlayer() {
   const { activeSong, isPlaying} = useSelector((state) => state.player);
   const [volume, setVolume] = useState(0.3);
+  const [appTime, setAppTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
+  // const [duration, setDuration] = useState(0);
+  // const [seekTime, setSeekTime] = useState(0);
+  // const [appTime, setAppTime] = useState(0);
   const dispatch = useDispatch();
 
   const handlePlayPause = () => {
@@ -21,7 +27,11 @@ function MusicPlayer() {
 
   return (
     <div className='flex flex-row fixed bottom-0 left-0 right-0 w-full bg-[#212121] h-20 items-center'>
-
+      <Seekbar
+        value={appTime}
+        max={duration}
+        onInput={(event) => setSeekTime(event.target.value)}
+      />
       {/* left-controls */}
       <div className='flex basis-1/4 ml-20'>
         {isPlaying ? (<BsFillPauseFill size={40} color='#FFF'className='cursor-pointer' onClick={handlePlayPause}/>) : 
@@ -29,7 +39,7 @@ function MusicPlayer() {
       </div>
 
       {/* center-controls */}
-      <div className='relative flex justify-center basis-1/2 text-white font-bold h-20'>
+      <div className='flex justify-center basis-1/2 text-white font-bold h-20'>
         <img src={activeSong?.images?.coverart} alt="cover art" className='object- m-4 rounded-sm'/>
         <div className='flex flex-col mt-4 ml-2'>
           <p className=''>
@@ -51,9 +61,12 @@ function MusicPlayer() {
       </div>
 
       <Player
+        seekTime={seekTime}
         activeSong={activeSong}
         volume={volume}
         isPlaying={isPlaying}
+        onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
+        onLoadedData={(event) => setDuration(event.target.duration)}
       />
     </div>
   )

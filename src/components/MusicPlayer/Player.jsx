@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-function Player({activeSong, isPlaying, volume, onTimeUpdate, onLoadedData, seekTime}) {
+function Player({activeSong, isPlaying, volume, onTimeUpdate, onLoadedData, seekTime, onEnded}) {
   const ref = useRef(null);
 
   if(ref.current){
@@ -25,9 +25,10 @@ function Player({activeSong, isPlaying, volume, onTimeUpdate, onLoadedData, seek
     <audio
       src={activeSong?.hub?.actions[1]?.uri}
       ref={ref}
-      loop={true}
+      loop={false}
       onTimeUpdate={onTimeUpdate}
       onLoadedData={onLoadedData}
+      onEnded={onEnded}
     />
   )
 }

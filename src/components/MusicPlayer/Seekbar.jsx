@@ -1,11 +1,6 @@
 import React from 'react'
 
 function Seekbar({value, max, onInput}) {
-
-  const getTime = (time) => `${Math.floor(time / 60)}:${(`0${Math.floor(time % 60)}`).slice(-2)}`;
-
-
-
   return (
     <div className='absolute top-0 w-full group'>
       <input

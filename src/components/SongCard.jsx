@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import PlayPause from './PlayPause';
 
-function SongCard({song}) {
+function SongCard({song, i, data}) {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const dispatch = useDispatch();
 
   const handlePlayClick = () => {
-    dispatch(setActiveSong({song}));
+    dispatch(setActiveSong({song, data, i}));
     dispatch(playPause(true));
   }
 

@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
 import MusicPlayer from "./components/MusicPlayer";
 import SideBar from "./components/SideBar";
-import SongCard from "./components/SongCard";
 import Discover from "./pages/Discover";
-import { useGetTopChartsQuery } from "./redux/features/shazamApi";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -11,7 +10,9 @@ function App() {
   return (
     <div className="relative flex">
       <SideBar/>
-      <Discover/>
+      <Routes>
+        <Route path="/" element={<Discover />}/>
+      </Routes>
       {activeSong?.title && (
         <MusicPlayer/>
       )}

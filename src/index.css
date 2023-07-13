@@ -40,4 +40,51 @@
     height: 12px;
     width: 12px;
   }
+
+
+  /* //////////////////////////////////////////// */
+
+
+  /* custom youtube-like volume slider */
+
+  .volume {
+    -webkit-appearance: none;
+     appearance: none;
+     background: transparent;
+     cursor: pointer;
+  }
+
+  
+  /* Removes default focus */
+  .volume:focus {
+   outline: none;
+  }
+  
+  /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+  /* slider track */
+  .volume::-webkit-slider-runnable-track {
+    /* background-color: rgb(144, 144, 144); */
+    border-radius: 0.5rem;
+    height: 2px;  
+  }
+  
+  /* slider thumb */
+  .volume::-webkit-slider-thumb {
+   -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -4px; /* Centers thumb on the track */
+  
+    /*custom styles*/
+    background-color: white;
+    height: 12px;
+    width: 12px;
+    border-radius: 100%;
+  }
+  
+  
+  .volume:hover::-webkit-slider-thumb {  
+    margin-top: -6px;
+    height: 16px;
+    width: 16px;
+  }
 }

@@ -11,11 +11,12 @@ function VolumeBar({ value, onChange, setVolume }) {
       <input 
         type="range" 
         step="any" 
-        className="w-32 h-1 ml-4" 
+        className="volume w-32 h-1 ml-4" 
         min="0" 
         max="1" 
         value={value}
         onChange={onChange}
+        style={{background: `linear-gradient(to right, #909090 0%, #909090 ${value*100}%, white ${value*100}%, white 100%`}}
       />
     </div>
   );

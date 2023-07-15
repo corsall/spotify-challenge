@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import PlayPause from './PlayPause';
+import { Link } from 'react-router-dom';
 
 function SongCard({song, i, data}) {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
@@ -34,7 +35,9 @@ function SongCard({song, i, data}) {
 
       <div className='mt-4 flex flex-col'>
         <p className="font-semibold text-lg text-white truncate">
-          {song.title}
+          <Link to={`/songs/${song?.key}`}>
+            {song.title}
+          </Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
           {song.subtitle}

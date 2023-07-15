@@ -5,6 +5,7 @@ import Discover from "./pages/Discover";
 import { Routes, Route } from "react-router-dom";
 import TopPlay from "./components/TopPlay";
 import SongDetails from "./pages/SongDetails";
+import ArtistDetails from "./pages/ArtistDetails";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -17,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Discover />}/>
           <Route path="/songs/:songid" element={<SongDetails />} />
+          <Route path="/artists/:id" element={<ArtistDetails/>} />
+
         </Routes>
 
         <div className="xl:sticky relative top-0 h-fit pt-6">

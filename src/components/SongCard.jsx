@@ -40,7 +40,9 @@ function SongCard({song, i, data}) {
           </Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
-          {song.subtitle}
+          <Link to={`/artists/${song?.artists[0]?.adamid}`}>
+            {song.subtitle}
+          </Link>
         </p>
       </div>
     </div>

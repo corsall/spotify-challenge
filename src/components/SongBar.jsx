@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PlayPause from "./PlayPause";
 
-function SongBar({song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) {
+function SongBar({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) {
   return (
     <div className="flex flex-row py-3 p-4 items-center">
       <h3 className="font-bold text-base text-white mr-3">{i + 1}</h3>
@@ -11,10 +11,18 @@ function SongBar({song, i, isPlaying, activeSong, handlePauseClick, handlePlayCl
         <p className="text-xl font-bold text-white truncate">
           <Link to={`/songs/${song?.key}`}>{song?.title}</Link>
         </p>
-        <p className="text-base text-gray-300 mt-1">{song?.subtitle}</p>
+        <p className="text-base text-gray-300 mt-1">
+          <Link to={`/artists/${song?.artists[0].adamid}`}>{song?.subtitle}</Link>
+        </p>
       </div>
       <div className="mx-8 cursor-pointer">
-        <PlayPause isPlaying={isPlaying} activeSong={activeSong} song={song} handlePause={handlePauseClick} handlePlay={() => handlePlayClick(song, i)} />
+        <PlayPause
+          isPlaying={isPlaying}
+          activeSong={activeSong}
+          song={song}
+          handlePause={handlePauseClick}
+          handlePlay={() => handlePlayClick(song, i)}
+        />
       </div>
     </div>
   );

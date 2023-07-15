@@ -1,41 +1,11 @@
 import React from 'react'
 import { useGetTopChartsQuery } from '../redux/features/shazamApi'
-import PlayPause from './PlayPause';
 import { useDispatch, useSelector } from 'react-redux';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
-import { Link } from 'react-router-dom';
-
-function TopChartCard({song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) {
-
-  return (
-    <div className='flex flex-row py-3 p-4 items-center'>
-      <h3 className='font-bold text-base text-white mr-3'>{i + 1}</h3>
-      <img src={song?.images?.coverart} alt={song?.title} className='w-20 h-20 rounded-lg'/>
-      <div className='flex-1 flex flex-col truncate justify-center mx-3'>
-        <p className='text-xl font-bold text-white truncate'>
-        <Link to={`/songs/${song.key}`}>
-          {song?.title}
-        </Link>
-        </p>
-        <p className='text-base text-gray-300 mt-1'>
-          {song?.subtitle}
-        </p>
-      </div>
-      <div className='mx-8 cursor-pointer'>
-        <PlayPause
-          isPlaying={isPlaying}
-          activeSong={activeSong}
-          song={song}
-          handlePause={handlePauseClick}
-          handlePlay={handlePlayClick}
-        />
-      </div>
-    </div>
-  )
-}
+import SongBar from './SongBar';
 
 
 function TopPlay() {
@@ -59,7 +29,7 @@ function TopPlay() {
     <div className='max-w-[500px] justify-start'>
       <h2 className='text-white font-bold text-2xl mb-6'>Top Charts</h2>
       {topPlays?.map((song, i) => (
-        <TopChartCard
+        <SongBar
           key={song.key}
           song={song}
           i={i}

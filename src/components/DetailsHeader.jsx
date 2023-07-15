@@ -9,11 +9,13 @@ function DetailsHeader({songData}) {
         <p className='font-bold text-white text-xl'>
           {songData?.title}
         </p>
+        <p className="text-base text-gray-400 mt-1">
+          {songData?.subtitle}
+        </p>
         <p className="text-base text-gray-400 mt-2">
           {songData?.genres?.primary}
         </p>
       </div>
-
     </div>
   )
 }

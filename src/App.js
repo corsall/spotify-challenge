@@ -13,7 +13,7 @@ function App() {
     <div className="relative flex">
       <SideBar/>
 
-      <div className="flex w-full last:bg-gradient-to-br from-black to-[#121286] min-h-screen xl:flex-row flex-col-reverse h-screen overflow-y-scroll no-scrollbar">
+      <div className="flex w-full bg-gradient-to-br from-black to-[#121286] min-h-screen xl:flex-row flex-col-reverse h-screen overflow-y-scroll no-scrollbar">
         <Routes>
           <Route path="/" element={<Discover />}/>
           <Route path="/songs/:songid" element={<SongDetails />} />

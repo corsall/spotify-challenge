@@ -11,7 +11,7 @@ function VolumeBar({ value, onChange, setVolume }) {
       <input 
         type="range" 
         step="any" 
-        className="volume w-32 h-1 ml-4" 
+        className="volume w-16 xl:w-32 h-1 ml-4" 
         min="0" 
         max="1" 
         value={value}

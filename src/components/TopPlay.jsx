@@ -41,7 +41,7 @@ function TopPlay() {
         />
       ))}
 
-      <div className='mt-8'>
+      <div className='mt-8 z-10'>
         <h2 className='text-white font-bold text-2xl mb-6'>Top Artists</h2>
         <Swiper
           slidesPerView="auto"

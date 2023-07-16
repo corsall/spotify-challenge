@@ -3,6 +3,7 @@ import { useGetTopChartsQuery } from '../redux/features/shazamApi'
 import { useDispatch, useSelector } from 'react-redux';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 import 'swiper/css';
 import SongBar from './SongBar';
@@ -54,7 +55,9 @@ function TopPlay() {
               key={artist?.key}
               style={{ width: '25%', height: 'auto' }}
             >
-              <img src={artist?.images?.background} alt="Name" className="rounded-full w-full object-cover" />
+              <Link to={`/artists/${artist?.artists[0].adamid}`}>
+                <img src={artist?.images?.background} alt="Name" className="rounded-full w-full object-cover" />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -6,6 +6,11 @@ import { Routes, Route } from "react-router-dom";
 import TopPlay from "./components/TopPlay";
 import SongDetails from "./pages/SongDetails";
 import ArtistDetails from "./pages/ArtistDetails";
+import AroundYou from "./pages/AroundYou";
+import TopArtists from "./pages/TopArtists";
+import TopCharts from "./pages/TopCharts";
+import SearchBar from "./components/SearchBar";
+import Search from "./pages/Search";
 
 function App() {
   const { activeSong } = useSelector((state) => state.player);
@@ -14,18 +19,26 @@ function App() {
     <div className="relative flex">
       <SideBar/>
 
-      <div className="flex w-full bg-gradient-to-br from-black to-[#121286] min-h-screen xl:flex-row flex-col-reverse h-screen overflow-y-scroll no-scrollbar">
+    <div className="flex flex-col flex-1 bg-gradient-to-br from-black to-[#121286] h-screen px-6">
+      <SearchBar/>
+
+      <div className="flex w-full xl:flex-row flex-col-reverse overflow-y-scroll no-scrollbar">
         <Routes>
           <Route path="/" element={<Discover />}/>
           <Route path="/songs/:songid" element={<SongDetails />} />
           <Route path="/artists/:id" element={<ArtistDetails/>} />
-
+          <Route path="/around-you" element={<AroundYou/>} />
+          <Route path="/top-artists" element={<TopArtists/>} />
+          <Route path="/top-charts" element={<TopCharts/>} />
+          <Route path="/search/:searchTerm" element={<Search/>} />
         </Routes>
 
-        <div className="xl:sticky relative top-0 h-fit pt-6">
+        <div className="xl:sticky relative top-0 h-fit">
           <TopPlay/>
         </div>
       </div>
+    </div>
+
 
 
 

@@ -10,8 +10,8 @@ function Discover() {
 
   return (
     <div className="flex flex-1 flex-col h-full ">
-      <h2 className="text-white font-bold text-3xl">Discover Pop</h2>
-      <div className="flex flex-wrap gap-8 justify-center px-4 pt-8 pb-24">
+      <h2 className="text-white font-bold text-3xl">Discover</h2>
+      <div className="flex flex-wrap gap-8 justify-center pt-8 pb-28">
         {data?.tracks.map((song, i) => (
           <SongCard 
             key={song.key} 

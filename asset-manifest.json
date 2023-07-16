@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/spotify-challenge/static/css/main.066f0db8.css",
-    "main.js": "/spotify-challenge/static/js/main.6531b629.js",
+    "main.css": "/spotify-challenge/static/css/main.9e1196e1.css",
+    "main.js": "/spotify-challenge/static/js/main.b5a98f54.js",
     "index.html": "/spotify-challenge/index.html",
-    "main.066f0db8.css.map": "/spotify-challenge/static/css/main.066f0db8.css.map",
-    "main.6531b629.js.map": "/spotify-challenge/static/js/main.6531b629.js.map"
+    "main.9e1196e1.css.map": "/spotify-challenge/static/css/main.9e1196e1.css.map",
+    "main.b5a98f54.js.map": "/spotify-challenge/static/js/main.b5a98f54.js.map"
   },
   "entrypoints": [
-    "static/css/main.066f0db8.css",
-    "static/js/main.6531b629.js"
+    "static/css/main.9e1196e1.css",
+    "static/js/main.b5a98f54.js"
   ]
 }

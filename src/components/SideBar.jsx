@@ -7,10 +7,10 @@ import { NavLink } from 'react-router-dom';
 
 const links = 
 [
-  {name: 'Discover', to: '/', icon: HiOutlineHome},
-  { name: 'Around You', to: '/around-you', icon: HiOutlinePhotograph },
-  { name: 'Top Artists', to: '/top-artists', icon: HiOutlineUserGroup },
-  { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },
+  {name: 'Discover', to: '/spotify-challenge/', icon: HiOutlineHome},
+  { name: 'Around You', to: '/spotify-challenge/around-you', icon: HiOutlinePhotograph },
+  { name: 'Top Artists', to: '/spotify-challenge/top-artists', icon: HiOutlineUserGroup },
+  { name: 'Top Charts', to: '/spotify-challenge/top-charts', icon: HiOutlineHashtag },
 ];
 
 function NavLinks() {
@@ -23,7 +23,7 @@ function NavLinks() {
         to={item.to}
         className="flex flex-row font-medium hover:text-cyan-400 text-white items-center justify-start mt-6 ml-4"
       >
-        <item.icon className="w-6 h-6 mr-4" />
+        <item.icon className="w-8 h-8 mr-4" />
         {item.name}
       </NavLink>
     ))}

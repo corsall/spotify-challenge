@@ -20,7 +20,7 @@ function SongCard({song, i, data}) {
   return (
     <div className='flex flex-col w-[250px] bg-white/5 backdrop-blur-sm rounded-lg cursor-pointer p-6'>
       <div className='relative group'>
-        <div className={`absolute w-full inset-0 flex justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.title === song.title ? 'bg-black bg-opacity-70' : 'hidden'}`}>
+        <div className={`absolute w-full inset-0 flex justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.title === song?.title ? 'bg-black bg-opacity-70' : 'hidden'}`}>
           <PlayPause
             song={song}
             handlePause={handlePauseClick}
@@ -29,19 +29,19 @@ function SongCard({song, i, data}) {
             isPlaying={isPlaying}
           />
         </div>
-        <img className='w-full h-full' alt='coverart' src={song.images?.coverart} ></img>
+        <img className='w-full h-full' alt='coverart' src={song?.images?.coverart ? song?.images?.coverart : 'https://images.squarespace-cdn.com/content/v1/55fc0004e4b069a519961e2d/1442590746571-RPGKIXWGOO671REUNMCB/image-asset.gif?format=2500w'}/>
       </div>
 
 
       <div className='mt-4 flex flex-col'>
         <p className="font-semibold text-lg text-white truncate">
-          <Link to={`/songs/${song?.key}`}>
-            {song.title}
+          <Link to={`/spotify-challenge/songs/${song?.key}`}>
+            {song?.title}
           </Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
-          <Link to={`/artists/${song?.artists[0]?.adamid}`}>
-            {song.subtitle}
+          <Link to={`/spotify-challenge/artists/${song?.artists?.[0]?.adamid}`}>
+            {song?.subtitle}
           </Link>
         </p>
       </div>

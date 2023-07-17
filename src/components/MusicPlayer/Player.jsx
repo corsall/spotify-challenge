@@ -23,7 +23,7 @@ function Player({activeSong, isPlaying, volume, onTimeUpdate, onLoadedData, seek
 
   return (
     <audio
-      src={activeSong?.hub?.actions[1]?.uri}
+      src={activeSong?.hub?.actions?.[1]?.uri}
       ref={ref}
       loop={false}
       onTimeUpdate={onTimeUpdate}

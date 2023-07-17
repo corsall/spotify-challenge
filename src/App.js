@@ -24,13 +24,13 @@ function App() {
 
         <div className="flex w-full xl:flex-row flex-col-reverse">
           <Routes>
-            <Route path="/" element={<Discover />}/>
-            <Route path="/songs/:songid" element={<SongDetails />} />
-            <Route path="/artists/:id" element={<ArtistDetails/>} />
-            <Route path="/around-you" element={<AroundYou/>} />
-            <Route path="/top-artists" element={<TopArtists/>} />
-            <Route path="/top-charts" element={<TopCharts/>} />
-            <Route path="/search/:searchTerm" element={<Search/>} />
+            <Route path="/spotify-challenge/" element={<Discover />}/>
+            <Route path="/spotify-challenge/songs/:songid" element={<SongDetails />} />
+            <Route path="/spotify-challenge/artists/:id" element={<ArtistDetails/>} />
+            <Route path="/spotify-challenge/around-you" element={<AroundYou/>} />
+            <Route path="/spotify-challenge/top-artists" element={<TopArtists/>} />
+            <Route path="/spotify-challenge/top-charts" element={<TopCharts/>} />
+            <Route path="/spotify-challenge/search/:searchTerm" element={<Search/>} />
           </Routes>
 
           <div className="xl:sticky relative top-0 h-fit">

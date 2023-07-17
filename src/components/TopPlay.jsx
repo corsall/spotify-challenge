@@ -55,7 +55,7 @@ function TopPlay() {
               key={artist?.key}
               style={{ width: '25%', height: 'auto' }}
             >
-              <Link to={`/artists/${artist?.artists[0].adamid}`}>
+              <Link to={`/spotify-challenge/artists/${artist?.artists[0].adamid}`}>
                 <img src={artist?.images?.background} alt="Name" className="rounded-full w-full object-cover" />
               </Link>
             </SwiperSlide>

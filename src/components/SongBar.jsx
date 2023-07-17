@@ -9,10 +9,10 @@ function SongBar({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayC
       <img src={song?.images?.coverart} alt={song?.title} className="w-20 h-20 rounded-lg" />
       <div className="flex-1 flex flex-col truncate justify-center mx-3">
         <p className="text-xl font-bold text-white truncate">
-          <Link to={`/songs/${song?.key}`}>{song?.title}</Link>
+          <Link to={`/spotify-challenge/songs/${song?.key}`}>{song?.title}</Link>
         </p>
         <p className="text-base text-gray-300 mt-1">
-          <Link to={`/artists/${song?.artists[0].adamid}`}>{song?.subtitle}</Link>
+          <Link to={`/spotify-challenge/artists/${song?.artists[0].adamid}`}>{song?.subtitle}</Link>
         </p>
       </div>
       <div className="mx-8 cursor-pointer">

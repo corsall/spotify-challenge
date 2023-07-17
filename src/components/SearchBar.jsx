@@ -9,12 +9,12 @@ function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    navigate(`/search/${searchTerm}`);
+    navigate(`/spotify-challenge/search/${searchTerm}`);
   };
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off" className='text-gray-400 p-2 '>
-      <div className="flex flex-row justify-start items-center">
+      <div className="flex flex-row justify-start items-center max-w-md">
         <FiSearch aria-hidden="true" className="w-5 h-5 ml-4" />
         <input
           name="search-field"

@@ -1,12 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetSongsBySearchQuery } from '../redux/features/shazamApi';
-import { useSelector } from 'react-redux';
 import SongCard from '../components/SongCard';
 
 function Search() {
   const { searchTerm } = useParams();
-  const { activeSong, isPlaying } = useSelector((state) => state.player);
   const {data} = useGetSongsBySearchQuery(searchTerm);
   console.log(data?.tracks?.hits);
 

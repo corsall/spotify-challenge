@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import PlayPause from "./PlayPause";
 
-function ArtistBar({song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) {
+function ArtistBar({song, i}) {
   console.log(song);
   return (
     <div className="flex flex-row py-3 p-4 items-center">
